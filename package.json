@@ -1,0 +1,26 @@
+{
+  "name": "Spring_admin",
+  "version": "0.0.1-SNAPSHOT",
+  "lockfileVersion": 2,
+  "requires": true,
+  "author": "Denis",
+  "description": "Estudo spring boot Admin server",
+  "keywords": [
+    "API",
+    "REST",
+    "Java",
+    "Spring",
+    "SpringBoot",
+    "Test"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "packages": {},
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  },
+  "scripts": {
+    "release": "standard-version",
+    "test": "mvn -q test -P test"
+  }
+}
