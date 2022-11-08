@@ -19,6 +19,9 @@
 		<pmd-maven-plugin.version>3.19.0</pmd-maven-plugin.version>
 		<checkstyle-maven-plugin.version>3.2.0</checkstyle-maven-plugin.version>
 		<local-config-checkstyle>src/main/resources/checkstyle.xml</local-config-checkstyle>
+		
+		<!-- Adicionado para resolver problema de compilação causado por esse plugin nesta versão do springBoot-->
+		<maven-resources-plugin>3.1.0</maven-resources-plugin>
 	</properties>
 	
 	<dependencies>
@@ -117,6 +120,11 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven-resources-plugin}</version>
 			</plugin>
 		</plugins>
 	</build>
