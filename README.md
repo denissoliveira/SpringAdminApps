@@ -1,6 +1,10 @@
 # Spring Admin
 
+* O Spring Boot Admin é um aplicativo Web, usado para gerenciar e monitorar aplicativos Spring Boot. Cada aplicativo é considerado como um cliente e se registra no servidor de administração do Spring Boot Admin.
+
 ## Descrição
+
+Spring Boot Admin é um aplicativo web, usado para gerenciar e monitorar aplicativos Spring Boot. Cada aplicativo é considerado como um cliente e se registra no servidor admin. Nos bastidores, a mágica é dada pelos endpoints do Spring Boot Actuator.
 
 ## Documentattion
 
