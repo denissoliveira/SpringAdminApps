@@ -160,6 +160,15 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>npm-install-all</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>npm-install</id>
                         <goals>
                             <goal>npm</goal>
@@ -188,6 +197,14 @@
             </plugin>
 		</plugins>
 		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</resource>
             <resource>
                 <directory>target/dist</directory>
                 <targetPath>META-INF/spring-boot-admin-server-ui/extensions/custom</targetPath>

@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"release": "standard-version",
-		"build": "vue-cli-service build src/main/resources/spring-boot-admin-server-ui/src",
+		"build": "vue-cli-service build uiAdminCustom/spring-boot-admin-server-ui/src",
 		"lint": "vue-cli-service lint",
 		"watch": "vue-cli-service build --watch"
 	},
