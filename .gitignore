@@ -35,3 +35,5 @@ build/
 
 ### nodejs ###
 node_modules/
+node/
+package-lock.json

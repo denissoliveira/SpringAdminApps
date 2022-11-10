@@ -12,6 +12,7 @@ public class ClientResource {
     
     @GetMapping("ola")
     public String olaMundo() {
+        log.info("Controller");
         return "Olá Mundo !!!";
     }
 

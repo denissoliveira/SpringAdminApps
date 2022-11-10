@@ -19,7 +19,8 @@
 		<pmd-maven-plugin.version>3.19.0</pmd-maven-plugin.version>
 		<checkstyle-maven-plugin.version>3.2.0</checkstyle-maven-plugin.version>
 		<local-config-checkstyle>src/main/resources/checkstyle.xml</local-config-checkstyle>
-		
+		<node.version>v16.13.2</node.version>
+        <npm.version>8.3.2</npm.version>
 		<!-- Adicionado para resolver problema de compilação causado por esse plugin nesta versão do springBoot-->
 		<maven-resources-plugin>3.1.0</maven-resources-plugin>
 	</properties>
@@ -144,7 +145,55 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>${maven-resources-plugin}</version>
 			</plugin>
+			<plugin>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install-node-and-npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>${node.version}</nodeVersion>
+                            <npmVersion>${npm.version}</npmVersion>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm-install</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>ci</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>npm-build</id>
+                        <goals>
+                            <goal>npm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>run build</arguments>
+                            <environmentVariables>
+                                <PROJECT_VERSION>${project.version}</PROJECT_VERSION>
+                            </environmentVariables>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
 		</plugins>
+		<resources>
+            <resource>
+                <directory>target/dist</directory>
+                <targetPath>META-INF/spring-boot-admin-server-ui/extensions/custom</targetPath>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
 	</build>
 
 </project>
